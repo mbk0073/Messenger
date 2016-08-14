@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Messenger</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/css/bootstrap.min.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/indexPage.css" type="text/css" media="all">
+       
+    </head>
+    <body>
+        <header>
+            <div class="btn-group">
+               
+            
+                <button type="button" id="login-button" onclick="load()" class="btn btn-success btn-primary btn-lg">Login</button>
+            
+            
+                <button type="button" id="RegisterButtton" onclick="unload()"  class="btn btn-success btn-primary btn-lg">Register</button>
+            
+            </div>
+            
+        </header>
+      <p id="notification"><button type="button" id="but" class="btn btn-success" onclick="hide(this)">Got it!</button></p>
+
+        <div class="body">
+            
+            <div class="Registrationform">
+                
+                <div class="header-form">
+                    <h3 style="color:white;">Register</h3>
+                </div>
+                <div class="form-body">
+                    
+
+                    <input type="text" name="fname" value="First Name" required onfocus="setBlank(this); window.interval=setInterval(dirtyCheck,1)" onblur="clearInterval(window.interval)" >
+                    
+                    <br/>
+                     <hr/>
+                     <input type="text" name="lname" value="Last Name" required  onfocus="setBlank(this);window.interval=setInterval(dirtyCheck,1)" onblur="clearInterval(window.interval)">
+                    
+                    <br/>
+                     <hr/>
+                     <input type="text" name="username" value="username" required onfocus="setBlank(this); window.interval=setInterval(dirtyCheck,1)" onblur="clearInterval(window.interval)"/>
+                     <br/>
+                     <hr/>
+                     
+                    <input type="email" name="email" value="Email Id" required  onfocus="setBlank(this); window.interval=setInterval(dirtyCheck,1)" onblur="clearInterval(window.interval)">
+                    
+                    <hr/>
+
+                        <input type="password" name="pass2"  id="pass2"  value="Password"  onfocus=" setBlank(this);"  
+                               pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain
+                             at least one number and one uppercase and lowercase letter, and at
+                              least 8 or more characters" required>
+                    <br/>
+                    <hr/>
+                     
+                    
+                     <input type="text" name="Age" value="Age" required onfocus="setBlank(this); window.interval=setInterval(dirtyCheck,1)" onblur="clearInterval(window.interval)" >
+                     <br/>
+                     <hr/>
+                     <br/>
+                    <button type="button" onclick=" clearInterval(window.interval);setData()">Register!</button>
+
+                    
+                
+                </div>
+                
+                <div class="info">
+                    
+                    <h4>Profile</h4>
+                    <div class=" profile-info">
+                        First Name:<span id="fname"></span><br/><hr/>
+                        Last Name:<span id="lname"></span><br/><hr/>
+                        Username:<span id="username"></span><br/><hr/>
+                         Email:<span id="email"></span><br/><hr/>
+                          Age:<span id="Age"></span><br/><hr/>
+                           
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="LoginForm">
+                
+               <div class="LoginForBody">
+                <div class="LoginHeader">
+                    
+                    <h3>Login</h3>
+                    
+                </div>
+                <div class="LoginBody">
+                    <pre>
+                    <input type="text" id="id" value="id" required onfocus="setBlank(this)">
+
+                    <input type="text" id="username2" value="Username" onfocus="setBlank(this)">
+
+                    <input type="text" id="email2" value="email" onfocus="setBlank(this)">
+                    
+                    <input type="password" id="password2" required value="password" onfocus="setBlank(this)">
+                    
+                    <button type="button" onclick="getData()">Login</button>
+                    </pre>
+                </div>
+                
+            
+               </div>
+                
+            </div>
+            
+            
+        </div>
+        <script src="js/indexPage.js" type="text/javascript"></script>
+       <script src="js/Register.js" type="text/javascript"></script>
+       
+        
+    </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>whutsapp</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/glyph/bootstrap.min.css" type="text/css" media="all">
+        <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css" media="all">
+        <style type="text/css" media="all">
+            .profile{
+                
+                height:140px;
+                width:140px;
+                
+            }
+            .post{float:left;}
+            .users{
+                border:1px solid black;
+                color:black;
+                background-color:white;
+                
+            }
+            #com2{
+                position:absolute;
+               
+                left:600px;
+                 height:400px;
+                width:600px;
+            }
+            #ActiveUsers{
+                float:left;
+                overflow-y: scroll;
+                height:700px;
+                width:600px;
+            }
+            #comments{
+               margin-top:410px;
+               border:2px solid black;
+                /*margin-top:100px;*/
+            }
+            #com{
+                
+                height:100%;
+                width:100%;
+                
+                border:2px solid black;
+                overflow-y: scroll;
+                
+                color:white; 
+            }
+            #com p{
+                border:2px solid blue;
+                border-radius: 6px 7px;
+                padding:2px;
+                color:white;
+                background-color:#55ACEE;
+            }
+            #userimg_info{
+                float:left;
+            }
+            #xx{clear:both; display:none;}
+            .all{
+                background-color: rgba(0,0,0,0.6);
+                color:white;
+                border:5px solid white;
+            }
+        </style>
+        
+    </head>
+    
+    <body>
+        <button class="btn btn-success btn-lg" onclick="window.location.href='http://localhost:8084/Messenger/#chat';
+                getAllUsers();
+            window.interval=setInterval(setDisplay,7000); 
+            window.secondInterval=setInterval(getOnlineUsers,7000);" disabled>Chat</button>
+        <button class="btn btn-success btn-lg" onclick="window.location.href='http://localhost:8084/Messenger/#AccountSettings';" style="float:left;">Settings</button>
+        <button onclick ="window.location.href='http://localhost:8084/Messenger/jsp/Logout.jsp?username='+window.XRSresponse.username" class="btn btn-success" style="float:right;">Logout</button>>
+        
+        <template id="user-template">
+            <div class="all">
+            <div class="post"> 
+                <img src="" alt="" onerror="sort(this);" class="profile img-circle img-responsive"/></div>
+               <div class="userimg_info">
+               <div class="user-name"></div>
+               <br/>
+               <div class="user-username"></div>
+               <br/>
+               <div class="user-email"></div>
+               <br/>
+               <div class="user-age"></div>
+               <br/>
+               </div>
+                
+            <div id="xx"></div>
+            </div>
+        </template>
+        <br/>
+        <h3>Active Users</h3>
+        <div id="ActiveUsers">
+            
+        </div>
+        <div id="com2">
+        <div id="com">
+            
+        </div>
+        </div>
+        <textarea rows="4" cols="80" id="comments">Enter a new message</textarea>
+        <button type="button" onclick="window.insertComment();"><span class="glyphicon glyphicon-send"></span></button>
+        
+        <script type="text/javascript">
+            /*var current="assets/Profiles"+JSON.parse(sessionStorage.getItem("loggedIn"));
+            var interval;
+            var x;
+            var h;
+            if(window.XMLHttpRequest){
+                x=new XMLHttpRequest();
+                h=new XMLHttpRequest();
+            }
+            else if(window.ActiveXObject){
+                x=new ActiveXObject("Microsoft.HTTP");
+                h=new ActiveXObject("Microsoft.HTTP");
+            }
+           window.getMessages=function(){
+                if(h){
+                    var c=document.getElementById("com");
+                    var message=c.getElementsByTagName("p");
+                    h.open("GET","jsp/load.jsp?n="+message,true);
+                    h.onreadystatechange=function(){
+                        if(h.readyState===4)c.innerHTML+=h.responseText;
+                    };
+                }
+                h.send(null);
+            };
+    window.insertComment=function(){
+         if(x){
+             var c=document.getElementById("comments").value;
+             var cur=JSON.parse(sessionStorage.getItem("loggedIn"));
+             x.open("GET","jsp/process.jsp?comment="+c+"&sentby="+cur.username);
+             x.onreadystatechange=function(){
+            if(x.readyState===4)document.getElementById("com").innerHTML+=x.responseText;
+             };
+           }
+         x.send(null);
+        comments.value="";
+    };
+           */  
+        </script>
+    </body>
+</html>
